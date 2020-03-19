@@ -38,16 +38,7 @@ def send_text(message):
 
 @bot.inline_handler(func=lambda query: len(query.query) > 0)
 def query_text(query):
-    #try:
-    #    matches = re.match(digits_pattern, query.query)
-    #except AttributeError as ex:
-    #    return
     if query.query != '':
-    #    matches = query.query
-    #else:
-    #    return
-    #matches = query.query
-        #text = matches.group()
         text= query.query
         search=api+urllib.parse.quote_plus(text.lower())
         response = requests.get(search)
